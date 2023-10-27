@@ -33,8 +33,9 @@ const Contact = () => {
 
     emailjs
       .send(
-        // import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        // import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        "service_snin3kx",
+        "template_6bfdbgk",
+
         {
           from_name: form.name,
           to_name: "louis Olivier",
@@ -42,12 +43,12 @@ const Contact = () => {
           to_email: "louiscyrano@gmail.com",
           message: form.message,
         },
-        // import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        "0SlqqkfvjPxY8aHrR"
       )
       .then(
         () => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          alert("Merci, je vous répondrai dès que possible.");
 
           setForm({
             name: "",
@@ -59,7 +60,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
+          alert("Ahh, quelque chose n'a pas bien marché. Essayez encore.");
         }
       );
   };
@@ -87,7 +88,7 @@ const Contact = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name ?"
+              placeholder="Votre Nom ?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -118,7 +119,7 @@ const Contact = () => {
             type="submit"
             className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
-            {loading ? "Sending..." : "Send"}
+            {loading ? "Envoi en cours..." : "Envoyez"}
           </button>
         </form>
       </motion.div>
